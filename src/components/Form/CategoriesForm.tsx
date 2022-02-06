@@ -1,4 +1,5 @@
 import { Text, View, StyleSheet } from "react-native";
+
 import { theme } from "../../styles/global";
 
 import { Categories } from "../Categories";
@@ -13,7 +14,7 @@ export function CategoriesForm({ openModalNewCategory }: CategoriesFormProps) {
       <Text style={styles.title}>Categoria</Text>
 
       <Categories
-        isPresentInForm={true}
+        isPresentInForm
         openModalNewCategory={openModalNewCategory}
       />
     </View>

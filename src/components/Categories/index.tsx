@@ -1,12 +1,14 @@
 import React from "react";
 
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
+
 import PlusSVG from "../../assets/PlusSVG";
 
 import { useCategories } from "../../context/useCategories";
-import { theme } from "../../styles/global";
 
 import { Category } from "./Category";
+
+import { theme } from "../../styles/global";
 
 interface CategoriesProps {
   isPresentInForm?: boolean;
@@ -35,9 +37,9 @@ export function Categories({
         {categoriesForm.map((category) => (
           <Category
             key={category}
-            isPresentInForm={true}
+            isPresentInForm
             name={category}
-            onPress={(name) => handleCategoryFormSelected(name)}
+            onPress={handleCategoryFormSelected}
             selected={categoryFormSelected === category}
           />
         ))}
@@ -61,7 +63,7 @@ export function Categories({
         <Category
           key={category}
           name={category}
-          onPress={(name) => handleCategorySelected(name)}
+          onPress={handleCategorySelected}
           selected={categorySelected === category}
         />
       ))}

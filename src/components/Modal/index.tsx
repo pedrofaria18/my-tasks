@@ -1,6 +1,7 @@
 import React, { ReactNode, useEffect, useState } from "react";
 
 import { View, Modal as ModalReactNative, StyleSheet } from "react-native";
+
 import { HeaderModal } from "./HeaderModal";
 
 interface ModalProps {
@@ -21,7 +22,7 @@ export function Modal({ isOpen, setIsOpen, children, title }: ModalProps) {
     <View style={styles.centeredView}>
       <ModalReactNative
         animationType="fade"
-        transparent={true}
+        transparent
         visible={modalVisible}
         onRequestClose={() => {
           setIsOpen();

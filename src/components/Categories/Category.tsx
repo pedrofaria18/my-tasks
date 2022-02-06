@@ -1,6 +1,9 @@
 import React from "react";
+
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+
 import { useTasks } from "../../context/useTasks";
+
 import { theme } from "../../styles/global";
 
 interface CategoryProps {

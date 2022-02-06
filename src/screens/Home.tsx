@@ -2,13 +2,14 @@ import React from "react";
 
 import { View, StyleSheet } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+
 import { Categories } from "../components/Categories";
 import { Button } from "../components/Button";
 import { Header } from "../components/Header";
 import { Tasks } from "../components/Tasks/index";
 
 import { theme } from "../styles/global";
-import { useNavigation } from "@react-navigation/native";
 
 export function Home() {
   const { navigate } = useNavigation();
@@ -17,7 +18,7 @@ export function Home() {
       <Header title="Minhas tarefas" />
       <Categories />
       <Tasks />
-      <View style={styles.button}>
+      <View style={styles.buttonContainer}>
         <Button
           text="+   Criar nova tarefa"
           onPress={() => navigate("CreateTask")}
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     paddingTop: 50,
   },
-  button: {
+  buttonContainer: {
     paddingHorizontal: 25,
   },
 });

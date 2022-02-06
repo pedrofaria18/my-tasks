@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+
 import { StyleSheet, ScrollView, Alert } from "react-native";
+
+import { useNavigation } from "@react-navigation/native";
 
 import { useCategories } from "../../context/useCategories";
 import { TaskForm, useTasks } from "../../context/useTasks";
@@ -10,25 +13,23 @@ import { CategoriesForm } from "./CategoriesForm";
 import { Input } from "./Input";
 import { Occurency } from "./Occurency";
 import { Button } from "../Button";
-
 import { ModalNewCategory } from "../Modal/ModalNewCategory";
 import { ModalDateTimePicker } from "../Modal/ModalDateTimePicker";
-import { useNavigation } from "@react-navigation/native";
 
 export function Form() {
   const { navigate } = useNavigation();
 
-  const [isOpenModalNewCategory, setIsOpenModalNewCategory] = useState(false);
-
-  const [isOpenModalDateTime, setIsOpenModalDateTime] = useState(false);
-  const [mode, setMode] = useState("date");
-
   const { categoryFormSelected } = useCategories();
-
   const { handleAddTask } = useTasks();
 
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [isOpenModalNewCategory, setIsOpenModalNewCategory] =
+    useState<boolean>(false);
+  const [isOpenModalDateTime, setIsOpenModalDateTime] =
+    useState<boolean>(false);
+  const [mode, setMode] = useState<string>("date");
+
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
   const [date, setDate] = useState<Date>(new Date());
   const [hour, setHour] = useState<Date>(new Date());
 
@@ -40,12 +41,12 @@ export function Form() {
     setIsOpenModalNewCategory(!isOpenModalNewCategory);
   };
 
-  const handleTitleChange = (text: string) => {
-    setTitle(text);
+  const handleTitleChange = (title: string) => {
+    setTitle(title);
   };
 
-  const handleDescriptionChange = (text: string) => {
-    setDescription(text);
+  const handleDescriptionChange = (description: string) => {
+    setDescription(description);
   };
 
   const handleSubmit = async () => {
@@ -77,7 +78,7 @@ export function Form() {
       <CategoriesForm openModalNewCategory={handleOpenModalNewCategory} />
       <Occurency
         handleOpenModalDateTime={handleOpenModalDateTime}
-        setMode={(value: string) => setMode(value)}
+        setMode={setMode}
         date={date}
         hour={hour}
       />
@@ -98,8 +99,8 @@ export function Form() {
         isOpen={isOpenModalDateTime}
         setIsOpen={handleOpenModalDateTime}
         mode={mode}
-        setDate={(value: Date) => setDate(value)}
-        setHour={(value: Date) => setHour(value)}
+        setDate={setDate}
+        setHour={setHour}
         date={date}
         hour={hour}
       />

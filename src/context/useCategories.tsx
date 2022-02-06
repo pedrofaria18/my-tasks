@@ -30,15 +30,15 @@ export function CategoriesProvider({ children }: Children) {
     setCategoryFormSelected(category);
   };
 
-  const handleAddCategory = (value: string) => {
+  const handleAddCategory = (newCategory: string) => {
     const categoriesMinusConclued = categories.filter(
       (category) => category !== "Concluídos"
     );
 
-    categoriesMinusConclued.find((category) => category === value)
+    categoriesMinusConclued.find((category) => category === newCategory)
       ? setCategories([...categories])
-      : (setCategories([...categoriesMinusConclued, value, "Concluídos"]),
-        setCategoryFormSelected(value));
+      : (setCategories([...categoriesMinusConclued, newCategory, "Concluídos"]),
+        setCategoryFormSelected(newCategory));
   };
 
   useEffect(() => {

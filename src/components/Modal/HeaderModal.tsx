@@ -1,6 +1,7 @@
 import React from "react";
 
 import { View, Pressable, Text, StyleSheet } from "react-native";
+
 import { theme } from "../../styles/global";
 
 interface HeaderModalProps {
@@ -12,7 +13,7 @@ export function HeaderModal({ title, setIsOpen }: HeaderModalProps) {
   return (
     <View style={styles.header}>
       <Text style={styles.title}>{title}</Text>
-      <Pressable style={styles.button} onPress={() => setIsOpen()}>
+      <Pressable style={styles.button} onPress={setIsOpen}>
         <Text style={styles.textButton}>X</Text>
       </Pressable>
     </View>

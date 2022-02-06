@@ -36,14 +36,14 @@ export function TasksProvider({ children }: Children) {
     setTasks((tasks) => [newTask, ...tasks]);
   };
 
-  const handleDeleteTask = (taskId: number) => {
-    setTasks(tasks.filter((task) => task.id !== taskId));
+  const handleDeleteTask = (taskDeletedId: number) => {
+    setTasks(tasks.filter((task) => task.id !== taskDeletedId));
   };
 
-  const handleFinishedTask = (task: Task) => {
+  const handleFinishedTask = (taskFinished: Task) => {
     setTasks(
-      tasks.map((t) =>
-        t.id === task.id ? { ...t, category: "Concluídos" } : t
+      tasks.map((task) =>
+        task.id === taskFinished.id ? { ...task, category: "Concluídos" } : task
       )
     );
   };

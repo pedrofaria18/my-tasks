@@ -1,4 +1,5 @@
 import { TextInput, StyleSheet } from "react-native";
+
 import { theme } from "../../styles/global";
 
 interface InputProps {
@@ -26,7 +27,7 @@ export function Input({
       ]}
       placeholder={placeholder}
       multiline={textarea}
-      onChangeText={(value) => onChangeText(value)}
+      onChangeText={onChangeText}
       value={value}
       placeholderTextColor={theme.colors.textInput}
     />

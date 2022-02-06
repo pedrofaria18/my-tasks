@@ -15,7 +15,7 @@ interface ModalNewCategoryProps {
 }
 
 export function ModalNewCategory({ isOpen, setIsOpen }: ModalNewCategoryProps) {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState<string>("");
 
   const { handleAddCategory } = useCategories();
 
@@ -28,8 +28,8 @@ export function ModalNewCategory({ isOpen, setIsOpen }: ModalNewCategoryProps) {
     setIsOpen();
   };
 
-  const handleChangeCategory = useCallback((value: string) => {
-    setCategory(value);
+  const handleChangeCategory = useCallback((category: string) => {
+    setCategory(category);
   }, []);
 
   return (
@@ -40,7 +40,7 @@ export function ModalNewCategory({ isOpen, setIsOpen }: ModalNewCategoryProps) {
           onChangeText={handleChangeCategory}
           value={category}
         />
-        <TouchableOpacity onPress={() => handleSubmit()}>
+        <TouchableOpacity onPress={handleSubmit}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Criar</Text>
           </View>

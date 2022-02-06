@@ -21,7 +21,7 @@ export function AppRoutes() {
   return (
     <NavigationContainer>
       <Navigator
-        initialRouteName="Minhas Tarefas"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
         }}

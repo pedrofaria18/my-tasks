@@ -1,7 +1,8 @@
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
 
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+
+import { useNavigation } from "@react-navigation/native";
 
 import { theme } from "../styles/global";
 
@@ -18,7 +19,7 @@ export function Header({ title }: HeaderProps) {
 
       {title === "Criar tarefa" && (
         <TouchableOpacity onPress={() => navigate("Home")}>
-          <Text style={styles.buttonText}>X</Text>
+          <Text style={styles.textButton}>X</Text>
         </TouchableOpacity>
       )}
     </View>
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     lineHeight: 54,
     color: theme.colors.secondary100,
   },
-  buttonText: {
+  textButton: {
     fontFamily: theme.fonts.body,
     fontSize: 24,
     color: theme.colors.secondary100,
