@@ -13,8 +13,11 @@ import { Button } from "../Button";
 
 import { ModalNewCategory } from "../Modal/ModalNewCategory";
 import { ModalDateTimePicker } from "../Modal/ModalDateTimePicker";
+import { useNavigation } from "@react-navigation/native";
 
-export function Form({ navigation }: any) {
+export function Form() {
+  const { navigate } = useNavigation();
+
   const [isOpenModalNewCategory, setIsOpenModalNewCategory] = useState(false);
 
   const [isOpenModalDateTime, setIsOpenModalDateTime] = useState(false);
@@ -61,7 +64,7 @@ export function Form({ navigation }: any) {
     };
 
     await handleAddTask(task);
-    navigation.navigate("Minhas Tarefas");
+    navigate("Home");
   };
 
   return (

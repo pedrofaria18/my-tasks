@@ -7,11 +7,11 @@ import { Form } from "../components/Form";
 
 import { theme } from "../styles/global";
 
-export function CreateTask({ navigation }: any) {
+export function CreateTask() {
   return (
     <View style={styles.container}>
-      <Header title="Criar tarefa" navigation={navigation} />
-      <Form navigation={navigation} />
+      <Header title="Criar tarefa" />
+      <Form />
     </View>
   );
 }

@@ -8,6 +8,15 @@ import { Home } from "../screens/Home";
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList {
+      Home: undefined;
+      CreateTask: undefined;
+    }
+  }
+}
+
 export function AppRoutes() {
   return (
     <NavigationContainer>
@@ -17,8 +26,8 @@ export function AppRoutes() {
           headerShown: false,
         }}
       >
-        <Screen name="Minhas Tarefas" component={Home} />
-        <Screen name="Criar Tarefa" component={CreateTask} />
+        <Screen name="Home" component={Home} />
+        <Screen name="CreateTask" component={CreateTask} />
       </Navigator>
     </NavigationContainer>
   );

@@ -6,7 +6,6 @@ export const tasksMock = [
     date: "23 de maio",
     hour: "8:00h",
     category: "Pessoal",
-    participants: [],
   },
   {
     id: 2,
@@ -15,7 +14,6 @@ export const tasksMock = [
     date: "24 de maio",
     hour: "9:00h",
     category: "Estudo",
-    participants: [],
   },
   {
     id: 3,
@@ -24,7 +22,6 @@ export const tasksMock = [
     date: "26 de maio",
     hour: "10:00h",
     category: "Estudo",
-    participants: [],
   },
   {
     id: 4,
@@ -33,7 +30,6 @@ export const tasksMock = [
     date: "30 de maio",
     hour: "7:00h",
     category: "Estudo",
-    participants: [],
   },
   {
     id: 5,
@@ -42,6 +38,5 @@ export const tasksMock = [
     date: "30 de maio",
     hour: "7:00h",
     category: "Projeto",
-    participants: [],
   },
 ];

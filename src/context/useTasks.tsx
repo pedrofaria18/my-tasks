@@ -33,7 +33,7 @@ export function TasksProvider({ children }: Children) {
       ...task,
     };
 
-    setTasks([newTask, ...tasks]);
+    setTasks((tasks) => [newTask, ...tasks]);
   };
 
   const handleDeleteTask = (taskId: number) => {

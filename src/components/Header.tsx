@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
@@ -6,16 +7,17 @@ import { theme } from "../styles/global";
 
 interface HeaderProps {
   title: string;
-  navigation?: any;
 }
 
-export function Header({ title, navigation }: HeaderProps) {
+export function Header({ title }: HeaderProps) {
+  const { navigate } = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
 
       {title === "Criar tarefa" && (
-        <TouchableOpacity onPress={() => navigation.navigate("Minhas Tarefas")}>
+        <TouchableOpacity onPress={() => navigate("Home")}>
           <Text style={styles.buttonText}>X</Text>
         </TouchableOpacity>
       )}
